@@ -1,0 +1,128 @@
+.mhuiButton {
+  cursor: pointer;
+  height: 3.2rem;
+  color: $white;
+  padding: 0.6rem 1.2rem;
+  display: flex;
+  align-items: center;
+  line-height: 2rem;
+  width: fit-content;
+  border-radius: 0.3rem;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+
+  &__primary {
+    &.mhuiButton__filled {
+      background-color: $primary;
+    }
+
+    &.mhuiButton__outline {
+      border: 1px solid $primary;
+      background-color: $white;
+      color: $primary;
+    }
+
+    &.mhuiButton__filled,
+    &.mhuiButton__outline {
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $primary-active;
+        transform: scale(0.97);
+        color: $white;
+      }
+
+      &:focus-visible {
+        outline: 1px solid $primary-active;
+      }
+    }
+  }
+
+  &__secondary {
+    &.mhuiButton__filled {
+      background-color: $secondary;
+    }
+
+    &.mhuiButton__outline {
+      border: 1px solid $secondary;
+      background-color: $white;
+      color: $secondary;
+    }
+
+    &.mhuiButton__filled,
+    &.mhuiButton__outline {
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $secondary-active;
+        color: $white;
+      }
+
+      &:focus-visible {
+        outline: 1px solid $secondary-active;
+      }
+    }
+  }
+
+  &__disabled[disabled] {
+    cursor: not-allowed;
+
+    &.mhuiButton__primary {
+      &.mhuiButton__filled {
+        &:hover,
+        &:focus {
+          background-color: $primary;
+        }
+
+        &:focus-visible {
+          outline: 1px solid $primary;
+        }
+      }
+
+      &.mhuiButton__outline {
+        &:hover,
+        &:focus {
+          border: 1px solid $primary;
+          background-color: $white;
+          color: $primary;
+        }
+
+        &:focus-visible {
+          outline: 1px solid $primary;
+        }
+      }
+    }
+
+    &.mhuiButton__secondary {
+      &.mhuiButton__filled {
+        &:hover,
+        &:focus {
+          background-color: $secondary;
+        }
+
+        &:focus-visible {
+          outline: 1px solid $secondary;
+        }
+      }
+
+      &.mhuiButton__outline {
+        &:hover,
+        &:focus {
+          border: 1px solid $secondary;
+          background-color: $white;
+          color: $secondary;
+        }
+
+        &:focus-visible {
+          outline: 1px solid $secondary;
+        }
+      }
+    }
+  }
+
+  &__icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-left: 0.4rem;
+  }
+}

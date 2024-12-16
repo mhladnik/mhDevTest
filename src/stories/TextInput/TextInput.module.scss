@@ -1,0 +1,101 @@
+.mhuiTextInput {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  &__error {
+    .mhuiTextInput__input {
+      &.mhuiTextInput__primary,
+      &.mhuiTextInput__secondary {
+        border-color: $error;
+        background-color: $error-bg;
+
+        &:focus {
+          outline: 1px solid $error;
+        }
+      }
+    }
+  }
+
+  &__warning {
+    .mhuiTextInput__input {
+      &.mhuiTextInput__primary,
+      &.mhuiTextInput__secondary {
+        border-color: $warning;
+        background-color: $warning-bg;
+
+        &:focus {
+          outline: 1px solid $warning;
+        }
+      }
+    }
+  }
+
+  &__required .mhuiTextInput__label {
+    &::after {
+      content: '*';
+      color: $required;
+      margin-left: 0.1rem;
+    }
+  }
+
+  &__label {
+    font-size: 1.4rem;
+    line-height: 1.75rem;
+    color: $dark-grey;
+  }
+
+  &__input {
+    color: $black;
+    width: 20rem;
+    height: 3.2rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 3px;
+    line-height: 1.875rem;
+
+    &.mhuiTextInput {
+      &__primary {
+        background-color: $primary-bg;
+        border: 1px solid $primary;
+      }
+
+      &__secondary {
+        background-color: $secondary-bg;
+        border: 1px solid $secondary;
+
+        &:focus,
+        &:focus-visible {
+          outline: 1px solid $secondary;
+        }
+      }
+    }
+  }
+
+  &__errorMessage,
+  &__warningMessage {
+    position: absolute;
+    top: 0;
+    display: flex;
+    font-size: 1.2rem;
+    margin-top: 6rem;
+  }
+
+  &__warningMessage {
+    color: $warning;
+  }
+
+  &__errorMessage {
+    color: $error;
+
+    svg {
+      margin-top: 0.2rem;
+    }
+  }
+
+  svg {
+    width: 1.4rem;
+    height: 1.5rem;
+    margin-right: 0.2rem;
+  }
+}
